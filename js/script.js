@@ -39,12 +39,7 @@ function showList(array) {
 document.addEventListener("DOMContentLoaded", (e) => {
   const arrayDeStringsOrdenado = strangeArray.filter(item => typeof item === "string");
   
-  arrayDeStringsOrdenado.sort((a, b) => {
-    if (a === "b is a letter") return -1;
-    if (b === "b is a letter") return 1;
-  
-    return a.localeCompare(b);
-  });
+  arrayDeStringsOrdenado.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
   // Sugerencia de cómo mostrar el array => showList(strangeArray);
   showList(arrayDeStringsOrdenado);
